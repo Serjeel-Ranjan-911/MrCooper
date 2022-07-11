@@ -31,6 +31,18 @@ public class Project {
                 "Donor List: " + donorList;
     }
 
+    public boolean acceptDonation(String userName,int amount,String currency){
+        this.fundRaisedAmount += amount;
+        this.donorList.add(userName + " donated " + amount+" "+currency);
+        return true;
+    }
+
+    public boolean widthdrawFund(){
+        System.out.println("Amount widthdrawn = "+this.fundRaisedAmount);
+        this.fundRaisedAmount = 0;
+        return true;
+    }
+
     public String thankTheDonor(){
         return "Thank you for your donation!";
     }

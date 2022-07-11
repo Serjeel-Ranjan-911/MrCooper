@@ -1,5 +1,6 @@
 package User;
 
+import java.util.*;
 import Project.*;
 
 public class Admin extends User{
@@ -8,7 +9,13 @@ public class Admin extends User{
         super(name);
     }
 
-    public void verifyProject(Project project) {
-        project.isVerified = true;
+    public void verifyProject(int projectId,ArrayList<Project> projects){
+
+        for(Project project: projects){
+            if(project.id == projectId){
+                project.isVerified = true;
+            }
+        }
+
     }
 }
