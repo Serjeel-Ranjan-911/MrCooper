@@ -11,7 +11,7 @@ public class Donor extends User{
     public void donateTo(int projectId,int amount,String currency,ArrayList<Project> projects){
         for(Project project: projects){
             if(project.id == projectId){
-                project.acceptDonation(this.name, amount, currency);
+                project.acceptDonation(this.name,this.id, amount, currency);
             }
         }
     }

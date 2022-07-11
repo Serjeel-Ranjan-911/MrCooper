@@ -10,7 +10,7 @@ public class Project {
     public double fundRaisedAmount;
     public int fundRaiserId;
     public boolean isVerified;
-    public ArrayList<String> donorList;
+    public ArrayList<Donation> donorList;
 
     public Project(String name, String description, int fundRaiserId) {
         this.id = Project._id;
@@ -19,7 +19,7 @@ public class Project {
         this.description = description;
         this.fundRaiserId = fundRaiserId;
         this.isVerified = false;
-        this.donorList = new ArrayList<String>();
+        this.donorList = new ArrayList<Donation>();
     }
 
     public String getDetails(){
@@ -31,9 +31,9 @@ public class Project {
                 "Donor List: " + donorList;
     }
 
-    public boolean acceptDonation(String userName,int amount,String currency){
+    public boolean acceptDonation(String userName,int userId,int amount,String currency){
         this.fundRaisedAmount += amount;
-        this.donorList.add(userName + " donated " + amount+" "+currency);
+        this.donorList.add(new Donation(userName, id, amount, currency));
         return true;
     }
 
