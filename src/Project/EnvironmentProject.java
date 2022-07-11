@@ -4,8 +4,8 @@ public class EnvironmentProject extends Project {
 
     public static int commissionFree = 5;
 
-    public EnvironmentProject(int id, String name, String description, int fundRaiserId) {
-        super(id, name, description, fundRaiserId);
+    public EnvironmentProject(String name, String description, int fundRaiserId) {
+        super(name, description, fundRaiserId);
     }
 
 }
